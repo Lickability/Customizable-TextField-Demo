@@ -8,10 +8,13 @@
 import UIKit
 import Combine
 
-class DemoViewController: UIViewController {
+/// `UIViewController` to display the `CustomizableTextField` demo.
+final class DemoViewController: UIViewController {
 
-    @IBOutlet weak var customTextField: CustomizableTextField!
+    @IBOutlet private weak var customTextField: CustomizableTextField!
     private var cancellables = Set<AnyCancellable>()
+    
+    // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()

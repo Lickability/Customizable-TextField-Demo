@@ -172,15 +172,16 @@ final class CustomizableTextField: UITextField {
         rightView = rightAccessoryButton
         rightViewMode = .never
         
-        rightAccessoryButton.tapPublisher
+        rightAccessoryButton.controlEventPublisher(for: .primaryActionTriggered)
             .sink {
-                self.rightAccessoryButton.isSelected = !self.rightAccessoryButton.isSelected
+                self.rightAccessoryButton.isSelected.toggle() 
             }
             .store(in: &cancellables)
         
         textPublisher
             .sink { text in
                 self.viewModel?.text = text
+                print(text ?? "")
             }
             .store(in: &cancellables)
     }
