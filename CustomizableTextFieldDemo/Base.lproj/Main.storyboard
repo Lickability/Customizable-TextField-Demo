@@ -36,7 +36,9 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="rightViewPadding">
                                         <real key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rightViewImage" value="lock.shield.fill" catalog="system"/>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="centerInset">
+                                        <point key="value" x="12" y="12"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
@@ -58,7 +60,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="lock.shield.fill" catalog="system" width="128" height="118"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

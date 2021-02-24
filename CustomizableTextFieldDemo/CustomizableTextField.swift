@@ -40,11 +40,8 @@ final class CustomizableTextField: UITextField {
         /// The placeholder text.
         let placeholder: String?
         
-        /// Sets the x origin inset for the text field and placeholder text.
-        let xInset: CGFloat
-        
-        /// Sets the y origin inset for the text field and placeholder text.
-        let yInset: CGFloat
+        /// Sets the center inset of the text field.
+        let centerInset: CGPoint
         
         /// The optional `RightView` to display on the `rightView` of a `UITextField`.
         var rightView: RightView?
@@ -62,8 +59,7 @@ final class CustomizableTextField: UITextField {
             text = viewModel.text
             textColor = viewModel.textColor
             placeholder = viewModel.placeholder
-            xInset = viewModel.xInset
-            yInset = viewModel.yInset
+            center = viewModel.centerInset
             
             rightViewImage = viewModel.rightView?.image
             rightViewText = viewModel.rightView?.text
@@ -78,16 +74,9 @@ final class CustomizableTextField: UITextField {
                   .eraseToAnyPublisher()
     }
     
-    /// Sets the x origin inset for the text field and placeholder text.
-    @IBInspectable private var xInset: CGFloat = 0 {
+    /// Sets the center inset of the text field..
+    @IBInspectable private var centerInset: CGPoint = .zero {
         didSet {
-            setNeedsLayout()
-        }
-    }
-    
-    /// Sets the y origin inset for the text field and placeholder text.
-    @IBInspectable private var yInset: CGFloat = 0 {
-          didSet {
             setNeedsLayout()
         }
     }
@@ -147,7 +136,7 @@ final class CustomizableTextField: UITextField {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewModel = ViewModel(text: text, textColor: textColor, placeholder: placeholder, xInset: xInset, yInset: yInset, rightView: .init(image: rightViewImage, text: rightViewText, tintColor: rightViewTintColor, padding: rightViewPadding))
+        viewModel = ViewModel(text: text, textColor: textColor, placeholder: placeholder, centerInset: centerInset, rightView: .init(image: rightViewImage, text: rightViewText, tintColor: rightViewTintColor, padding: rightViewPadding))
     }
     
     // MARK: - UITextField
@@ -174,7 +163,7 @@ final class CustomizableTextField: UITextField {
         
         rightAccessoryButton.controlEventPublisher(for: .primaryActionTriggered)
             .sink {
-                self.rightAccessoryButton.isSelected.toggle() 
+                self.rightAccessoryButton.isSelected.toggle()
             }
             .store(in: &cancellables)
         
@@ -187,8 +176,9 @@ final class CustomizableTextField: UITextField {
     }
     
     private func insetTextRect(forBounds bounds: CGRect) -> CGRect {
-        var insetBounds = bounds.insetBy(dx: xInset, dy: yInset)
+        var insetBounds = bounds.insetBy(dx: centerInset.x, dy: centerInset.y)
         insetBounds.size.width -= rightViewPadding + rightAccessoryButton.bounds.width
         return insetBounds
     }
 }
+
