@@ -3,27 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		ABD51D8E25E4461A00DB530D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD51D8D25E4461A00DB530D /* AppDelegate.swift */; };
 		ABD51D9025E4461A00DB530D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD51D8F25E4461A00DB530D /* SceneDelegate.swift */; };
-		ABD51D9225E4461A00DB530D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD51D9125E4461A00DB530D /* ViewController.swift */; };
 		ABD51D9525E4461A00DB530D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD51D9325E4461A00DB530D /* Main.storyboard */; };
 		ABD51D9725E4461C00DB530D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD51D9625E4461C00DB530D /* Assets.xcassets */; };
 		ABD51D9A25E4461C00DB530D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD51D9825E4461C00DB530D /* LaunchScreen.storyboard */; };
+		ABD51DA425E4463F00DB530D /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = ABD51DA325E4463F00DB530D /* CombineCocoa */; };
+		ABD51DA825E4465800DB530D /* CustomizableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD51DA725E4465800DB530D /* CustomizableTextField.swift */; };
+		ABD539E125E4A2A6001992E9 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD539E025E4A2A6001992E9 /* DemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ABD51D8A25E4461A00DB530D /* CustomizableTextFieldDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomizableTextFieldDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD51D8D25E4461A00DB530D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABD51D8F25E4461A00DB530D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ABD51D9125E4461A00DB530D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ABD51D9425E4461A00DB530D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABD51D9625E4461C00DB530D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABD51D9925E4461C00DB530D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABD51D9B25E4461C00DB530D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABD51DA725E4465800DB530D /* CustomizableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizableTextField.swift; sourceTree = "<group>"; };
+		ABD539E025E4A2A6001992E9 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD51DA425E4463F00DB530D /* CombineCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,11 +62,12 @@
 			children = (
 				ABD51D8D25E4461A00DB530D /* AppDelegate.swift */,
 				ABD51D8F25E4461A00DB530D /* SceneDelegate.swift */,
-				ABD51D9125E4461A00DB530D /* ViewController.swift */,
 				ABD51D9325E4461A00DB530D /* Main.storyboard */,
 				ABD51D9625E4461C00DB530D /* Assets.xcassets */,
 				ABD51D9825E4461C00DB530D /* LaunchScreen.storyboard */,
 				ABD51D9B25E4461C00DB530D /* Info.plist */,
+				ABD51DA725E4465800DB530D /* CustomizableTextField.swift */,
+				ABD539E025E4A2A6001992E9 /* DemoViewController.swift */,
 			);
 			path = CustomizableTextFieldDemo;
 			sourceTree = "<group>";
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = CustomizableTextFieldDemo;
+			packageProductDependencies = (
+				ABD51DA325E4463F00DB530D /* CombineCocoa */,
+			);
 			productName = CustomizableTextFieldDemo;
 			productReference = ABD51D8A25E4461A00DB530D /* CustomizableTextFieldDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +118,9 @@
 				Base,
 			);
 			mainGroup = ABD51D8125E4461A00DB530D;
+			packageReferences = (
+				ABD51DA225E4463F00DB530D /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+			);
 			productRefGroup = ABD51D8B25E4461A00DB530D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,9 +148,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABD51D9225E4461A00DB530D /* ViewController.swift in Sources */,
+				ABD51DA825E4465800DB530D /* CustomizableTextField.swift in Sources */,
 				ABD51D8E25E4461A00DB530D /* AppDelegate.swift in Sources */,
 				ABD51D9025E4461A00DB530D /* SceneDelegate.swift in Sources */,
+				ABD539E125E4A2A6001992E9 /* DemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +353,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ABD51DA225E4463F00DB530D /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ABD51DA325E4463F00DB530D /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABD51DA225E4463F00DB530D /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ABD51D8225E4461A00DB530D /* Project object */;
 }
