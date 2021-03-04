@@ -74,7 +74,7 @@ final class CustomizableTextField: UITextField {
                   .eraseToAnyPublisher()
     }
     
-    /// Sets the center inset of the text field..
+    /// Used to inset the bounds of the text field. The x values is applied as horizontal insets and the y value is applied as vertical insets.
     @IBInspectable private var centerInset: CGPoint = .zero {
         didSet {
             setNeedsLayout()
@@ -109,13 +109,8 @@ final class CustomizableTextField: UITextField {
     /// Sets tintColor for the `rightView`.
     @IBInspectable private var rightViewTintColor: UIColor? {
         didSet {
-            if rightViewImage != nil {
-                rightAccessoryButton.tintColor = rightViewTintColor
-            }
-            
-            if rightViewText != nil {
-                rightAccessoryButton.setTitleColor(rightViewTintColor, for: .normal)
-            }
+            rightAccessoryButton.tintColor = rightViewTintColor
+            rightAccessoryButton.setTitleColor(rightViewTintColor, for: .normal)
         }
     }
     
